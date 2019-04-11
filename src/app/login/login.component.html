@@ -1,0 +1,16 @@
+
+<body ng-app="myApp">
+     <div ng-controller="myCtrl"> 
+        <div>
+        <label>Username:
+        <input  placeholder="Username" ng-model="user" value="{{userl}}" id="unl" /></label>
+        </div>
+
+        <div>
+        <label>Password:
+        <input  placeholder="Password" ng-model="pass"/></label>
+        </div>
+        <input type="submit" (click)="submitLog" value="Login">
+        <button routerLink="/">Back</button>
+     </div>
+<router-outlet></router-outlet>
