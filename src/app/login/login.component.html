@@ -1,16 +1,17 @@
 
-<body ng-app="myApp">
-     <div ng-controller="myCtrl">
+     <div>
         <div>
-        <label>Username:
-        <input  placeholder="Username" ng-model="user" value="{{userl}}" id="unl" /></label>
+        <label>Username:</label>
+        <input  placeholder="Username"  [(ngModel)]="this.user" id="user" name="user" >
         </div>
 
         <div>
-        <label>Password:
-        <input  placeholder="Password" ng-model="pass"/></label>
+        <label>Password:</label>
+        <input  placeholder="Password"  [(ngModel)]="this.pass" id="pass" name="pass" >
         </div>
-        <input type="submit" (click)="do_request()" value="Login">
+        <input type="submit" value="Login" (click)="do_request(this.user,this.pass)">
         <button routerLink="/">Back</button>
      </div>
+
 <router-outlet></router-outlet>
+    

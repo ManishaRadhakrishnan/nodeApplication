@@ -10,13 +10,21 @@ export class LoginComponent{
     error: any;
     headers: string[];
     login: Login;
-
-
-  constructor(private login_service: LoginService) { }
-
-  do_request()
+    user : string;
+    pass : string;
+  constructor(
+    private login_service: LoginService
+    ) {
+      this.user = '';
+      this.pass='';
+    }
+  //  display(user,pass)
+    //{
+     //this.login_service.get_response(this.user,this.pass);
+    //}
+  do_request(user,pass)
   {
-    this.login_service.get_response()
+    this.login_service.get_response(this.user,this.pass)
     .subscribe(
       (data: Login) => this.login = { ...data }, // success path
       error => this.error = error // error path
